@@ -38,7 +38,7 @@ export default {
 		if (baseUri.endsWith(SCRIPT_WITHOUT_EXTENSION)) {
 			let response = await caches.default.match(request);
 			if (!response) {
-				response = await fetch('https://plausible.io/js/plausible.' + extensions.join('.'));
+				response = await fetch('https://stats.varyvoda.com/js/plausible.' + extensions.join('.'));
 				ctx.waitUntil(caches.default.put(request, response.clone()));
 			}
 			return response;
